@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wixo Matrimony - Modern UI</title>
+    <style>
+        /* General Reset and Body Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 50px 20px; /* Added horizontal padding for better spacing */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Main Heading */
+        .main-heading {
+            font-size: 2.2em;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 90%; /* Prevent overflow on very small screens */
+        }
+
+        /* Icons Container (Flexbox for the single line row) */
+        .icon-container {
+            display: flex; /* Key: Arrange in one row */
+            justify-content: center;
+            flex-wrap: nowrap; /* Ensures they stay on one line by default */
+            gap: 40px; 
+            max-width: 1200px;
+            width: 100%; /* Ensure container takes full width up to max-width */
+            padding-bottom: 10px;
+            overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scroll-snap-type: x mandatory; /* Optional: Snap to items for better UX */
+        }
+
+        /* Individual Icon Item */
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 120px; /* Fixed width for consistent spacing */
+            flex-shrink: 0; /* Prevents items from shrinking */
+            scroll-snap-align: center; /* Optional: Align items to center when snapping */
+        }
+
+        /* Icon Circle and Placeholder styling */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #b8860b; /* Gold/dark yellow color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+            transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+        }
+
+        .icon-circle:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        /* The white graphic inside the icon (Placeholder) */
+        .icon-graphic {
+            font-size: 32px; /* Slightly larger icons */
+            color: white;
+            line-height: 1;
+        }
+
+        /* Text below the icons */
+        .icon-text {
+            font-size: 0.95em; /* Slightly larger text */
+            color: #a0522d; /* Sienna/brownish color for the text */
+            font-weight: 600;
+            line-height: 1.3; /* Better readability for multi-line text */
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .icon-container {
+                justify-content: flex-start; /* Align items to start when scrolling */
+                padding-left: 20px; /* Add some padding at the start */
+                padding-right: 20px; /* Add some padding at the end */
+                gap: 30px; /* Slightly reduced gap on smaller screens */
+            }
+
+            .icon-item {
+                width: 100px; /* Smaller width for items on mobile */
+            }
+
+            .icon-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .icon-graphic {
+                font-size: 28px;
+            }
+
+            .icon-text {
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            .main-heading {
+                font-size: 1.5em;
+                margin-bottom: 25px;
+            }
+
+            .icon-container {
+                gap: 20px; /* Further reduced gap on very small screens */
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .icon-item {
+                width: 90px; /* Even smaller width for items */
+            }
+
+            .icon-circle {
+                width: 55px;
+                height: 55px;
+            }
+
+            .icon-graphic {
+                font-size: 26px;
+            }
+
+            .icon-text {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="main-heading">Why choose Wixo Matrimony</h2>
+
+    <div class="icon-container">
+
+        <div class="icon-item">
+            <div class="icon-circle">
+                <span class="icon-graphic">👥</span> <!-- New logo: Group of people -->
+            </div>
+            <p class="icon-text">Lakhs of Profiles</p>
+        </div>
+
+        <div class="icon-item">
+            <div class="icon-circle">
+                <span class="icon-graphic">🧠</span> <!-- New logo: Brain for AI -->
+            </div>
+            <p class="icon-text">AI-Based Matches</p>
+        </div>
+        
+        <div class="icon-item">
+            <div class="icon-circle">
+                <span class="icon-graphic">✅</span> <!-- New logo: Checkmark for verified -->
+            </div>
+            <p class="icon-text">Phone Number Verified Profiles</p>
+        </div>
+
+        <div class="icon-item">
+            <div class="icon-circle">
+                <span class="icon-graphic">✨</span> <!-- New logo: Sparkles for user-friendly -->
+            </div>
+            <p class="icon-text">User-Friendly Interface</p>
+        </div>
+
+        <div class="icon-item">
+            <div class="icon-circle">
+                <span class="icon-graphic">🔒</span> <!-- New logo: Lock for privacy/security -->
+            </div>
+            <p class="icon-text">Privacy and Security</p>
+        </div>
+
+        <div class="icon-item">
+            <div class="icon-circle">
+                <span class="icon-graphic">💬</span> <!-- Added another item: 24/7 Support -->
+            </div>
+            <p class="icon-text">24/7 Support</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
