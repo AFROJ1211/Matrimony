@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wixo.In - The World's No.1 Matrimony Service</title>
+    <!-- Google Fonts - Poppins --><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif; /* Modern font */
+            color: #333;
+            overflow-x: hidden;
+            background-color: #f8f8f8; /* Light background for overall page */
+        }
+
+        /* Hero Section - Contains the background image */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            
+            /* --- UPDATED TO RELIABLE VERTICAL PLACEHOLDER IMAGE --- */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://placehold.co/1200x2000/e83d5a/ffffff?text=Happy+Indian+Couple') no-repeat center center/cover; 
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Header (Desktop Default: Logo Left, Links Right) */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px; /* Increased padding */
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.05); /* Slightly transparent header */
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 10; /* Ensure header is above other content if necessary */
+        }
+
+        .logo {
+            height: 45px; /* Slightly larger logo */
+            filter: brightness(1.2); /* Make logo pop a bit more */
+            order: 1; /* Default order: 1 (left) */
+        }
+
+        .nav-links {
+            order: 2; /* Default order: 2 (right) */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px; /* Increased spacing */
+            font-size: 17px;
+            font-weight: 500; /* Medium weight */
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e83d5a; 
+        }
+
+        /* Hero Content */
+        .hero-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 150px; /* Space for the search bar */
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for readability */
+        }
+
+        .hero-content h1 {
+            font-size: 56px; /* Larger, more impactful heading */
+            margin-bottom: 15px;
+            font-weight: 700; /* Bold */
+            letter-spacing: -0.5px; /* Tighter letter spacing */
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            margin-top: 0;
+            font-weight: 300; /* Lighter weight for sub-text */
+            opacity: 0.9;
+        }
+
+        /* Search Bar Container (Sits at the bottom of the hero) */
+        .search-bar-container {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 40px 0; /* Vertical padding */
+            background: rgba(255, 255, 255, 0.95); /* Opaque white background */
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+            transform: translateY(0);
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Align inputs and button at the bottom */
+            gap: 20px; 
+            max-width: 1300px; 
+            margin: 0 auto;
+            flex-wrap: wrap;
+            background-color: white; 
+            padding: 25px 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
+            border: 1px solid #eee;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column; /* Stack label and input */
+            align-items: flex-start; 
+            margin-bottom: 0; 
+        }
+
+        .search-bar label {
+            font-size: 14px; 
+            color: #666; 
+            margin-bottom: 5px; 
+            font-weight: 500;
+        }
+
+        .search-bar select,
+        .search-bar input[type="number"] {
+            padding: 12px 18px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: white;
+            font-size: 16px;
+            color: #333;
+            min-width: 120px; 
+            max-width: 150px; 
+            transition: all 0.3s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center; 
+            background-size: 14px auto;
+            padding-right: 35px; 
+            height: 50px; 
+            box-sizing: border-box;
+        }
+
+        .search-bar input[type="number"] {
+            background-image: none; 
+            padding-right: 18px;
+        }
+
+        .search-bar select:focus,
+        .search-bar input[type="number"]:focus {
+            outline: none;
+            border-color: #e83d5a; 
+            box-shadow: 0 0 0 3px rgba(232, 61, 90, 0.3); 
+        }
+
+        .search-bar button {
+            background: linear-gradient(to right, #e83d5a, #d43751); /* Red Gradient for action */
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 8px; 
+            font-size: 18px; 
+            font-weight: 600; 
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(232, 61, 90, 0.4); /* Button shadow */
+            min-width: 180px;
+            height: 50px; 
+            box-sizing: border-box;
+        }
+
+        .search-bar button:hover {
+            background: linear-gradient(to right, #d43751, #c02f47); 
+            box-shadow: 0 8px 20px rgba(232, 61, 90, 0.5);
+            transform: translateY(-2px); 
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .search-bar {
+                max-width: 95%;
+                gap: 15px;
+                padding: 20px;
+            }
+            .input-group {
+                min-width: 150px;
+                flex-grow: 1; 
+            }
+            .search-bar select,
+            .search-bar input[type="number"] {
+                width: 100%;
+                max-width: 100%;
+            }
+            .search-bar button {
+                min-width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* ENSURE IMAGE VISIBILITY ON MOBILE - Prioritizes the top of the image */
+            .hero-section {
+                background-position: top center;
+            }
+            
+            .header {
+                /* Removed flex-direction: column to keep items side-by-side */
+                padding: 15px 20px;
+            }
+
+            /* --- HEADER LAYOUT REVERTED TO DESKTOP ORDER (Logo Left, Links Right) --- */
+            .logo {
+                /* Resetting order ensures it uses the default order: 1 (left) */
+                order: initial; 
+                height: 35px; /* Adjusted size for mobile */
+            }
+            
+            .nav-links {
+                /* Resetting order ensures it uses the default order: 2 (right) */
+                order: initial; 
+            }
+            /* ------------------------------------------------------------------------ */
+
+            .nav-links a {
+                margin-left: 15px; /* Increased margin for better touch targets */
+                margin-right: 0;
+                font-size: 15px; /* Adjusted font size for mobile */
+            }
+
+            .hero-content h1 {
+                font-size: 36px; /* Adjusted font size for mobile */
+            }
+
+            .hero-content p {
+                font-size: 18px; /* Adjusted font size for mobile */
+            }
+
+            .search-bar-container {
+                padding: 30px 0;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+                width: 90%;
+            }
+
+            .input-group {
+                width: 100%; /* Single column on small screens */
+                min-width: 0;
+                align-items: center; 
+            }
+
+            .search-bar label {
+                align-self: flex-start; /* Revert label alignment */
+                padding-left: 5%;
+            }
+
+            .search-bar select,
+            .search-bar input[type="number"],
+            .search-bar button {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="header">
+            <!-- Logo URL replaced with reliable placeholder --><img src="https://placehold.co/150x45/E83D5A/FFFFFF?text=WIXO+Logo" alt="Shaadi.com Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x45/E83D5A/FFFFFF?text=Shaadi+Logo';">
+            <div class="nav-links">
+                <a href="#">Login</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <h1>The World's No.1 Matrimony Service</h1>
+            <p>Search by City, Profession & Community</p>
+        </div>
+
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <div class="input-group">
+                    <label for="looking-for">I'm looking for a</label>
+                    <select id="looking-for">
+                        <option>Woman</option>
+                        <option>Man</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="age-from">aged</label>
+                    <input type="number" id="age-from" value="22" min="18" max="70">
+                </div>
+
+                <div class="input-group">
+                    <label for="age-to">to</label>
+                    <input type="number" id="age-to" value="27" min="18" max="70">
+                </div>
+
+                <div class="input-group">
+                    <label for="religion">of religion</label>
+                    <select id="religion">
+                        <option>Select</option>
+                        <option>Hindu</option>
+                        <option>Muslim</option>
+                        <option>Christian</option>
+                        <option>Sikh</option>
+                        <option>Jain</option>
+                        <option>Buddhist</option>
+                        <option>Parsi</option>
+                        <option>Jewish</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="mother-tongue">and mother tongue</label>
+                    <select id="mother-tongue">
+                        <option>Select</option>
+                        <option>Hindi</option>
+                        <option>English</option>
+                        <option>Bengali</option>
+                        <option>Marathi</option>
+                        <option>Telugu</option>
+                        <option>Tamil</option>
+                        <option>Gujarati</option>
+                        <option>Kannada</option>
+                        <option>Malayalam</option>
+                        <option>Punjabi</option>
+                    </select>
+                </div>
+
+                <button>Let's Begin</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
